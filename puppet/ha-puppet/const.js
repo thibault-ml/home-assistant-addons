@@ -17,7 +17,7 @@ export const hassUrl = isAddOn
   ? (options.home_assistant_url || "http://homeassistant:8123")
   : (options.home_assistant_url || "http://localhost:8123");
 export const hassToken = options.access_token;
-export const debug = false;
+export const debug = true;
 
 export const chromiumExecutable = isAddOn ? "/usr/bin/chromium" : (options.chromium_executable || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
 
