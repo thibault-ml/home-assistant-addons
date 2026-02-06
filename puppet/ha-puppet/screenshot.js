@@ -256,6 +256,7 @@ const puppeteerArgs = [
   "--use-gl=swiftshader",
   "--use-mock-keychain",
   "--disable-lcd-text",
+  "--disable-font-subpixel-positioning",
 ];
 if (isAddOn) {
   puppeteerArgs.push("--enable-low-end-device-mode");
@@ -317,6 +318,11 @@ export class Browser {
     }
 
     console.log("Starting browser");
+    if (debug) {
+      console.log(`[DEBUG] Browser path: ${chromiumExecutable}`)
+      console.log(`[DEBUG] Puppeteer arguments: ${puppeteerArgs}`)
+    }
+      
     // We don't catch these errors on purpose, as we're
     // not able to recover once the app fails to start.
     const browser = await puppeteer.launch({
