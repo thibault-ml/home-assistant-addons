@@ -255,6 +255,7 @@ const puppeteerArgs = [
   "--password-store=basic",
   "--use-gl=swiftshader",
   "--use-mock-keychain",
+  "--disable-lcd-text",
 ];
 if (isAddOn) {
   puppeteerArgs.push("--enable-low-end-device-mode");
